@@ -83,6 +83,18 @@ class HomeScreen extends StatelessWidget {
               onPressed: () => context.go('/profile'),
               child: const Text('Go to the Profile screen'),
             ),
+
+            HtmlWidget(html,
+            onTapUrl: (url) {
+                if (url == '#/details') {
+                  context.go('/details');
+                } else if (url == '#/profile') {
+                  context.go('/profile');
+                }
+                return true;
+              }, )
+
+
           ],
         ),
 
@@ -115,7 +127,15 @@ class DetailsScreen extends StatelessWidget {
               onPressed: () => context.go('/profile'),
               child: const Text('Go to the Profile screen'),
             ),
-            HtmlWidget(html )
+            HtmlWidget(html ,
+            onTapUrl: (url) {
+                if (url == '#/details') {
+                  context.go('/details');
+                } else if (url == '#/profile') {
+                  context.go('/profile');
+                }
+                return true;
+              },)
           ],
         ),
 
@@ -150,7 +170,15 @@ class ProfileScreen extends StatelessWidget {
               child: const Text('Go to the detail screen'),
             ),
 
-            HtmlWidget(html )
+            HtmlWidget(html,
+            onTapUrl: (url) {
+                if (url == '#/details') {
+                  context.go('/details');
+                } else if (url == '#/profile') {
+                  context.go('/profile');
+                }
+                return true;
+              }, )
           ],
         ),
 
